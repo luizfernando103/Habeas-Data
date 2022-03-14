@@ -22,6 +22,10 @@ body::selection{
     background-color: blue;
 }
 
+textarea{
+    resize: vertical;
+}
+
 article,
 aside,
 footer,
