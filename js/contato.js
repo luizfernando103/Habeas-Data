@@ -32,9 +32,17 @@ assuntoInput.addEventListener("change",(e)=>{
         addNone(erphdConsultores);
         addBlock(educanetConsultores);
     } 
+
+    else if(assuntoInput.value == "Adm"){
+        consultorInput.style.display = "block";
+        addNone(erphdConsultores);
+        addNone(educanetConsultores);
+    }
     
     else if(assuntoInput.value == ""){
         consultorInput.style.display = "none";
+        addNone(erphdConsultores);
+        addNone(educanetConsultores);
     }
 });
 
