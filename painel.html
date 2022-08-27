@@ -2,36 +2,69 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Utilitários - Habeas Data</title>
+        <title>Habeas Data</title>
         <link rel="icon" href="img/icons/icone-logo.webp" type="image/webp"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" type="text/css" href="evo-calendar/css/evo-calendar.css"/>
-	    <link rel="stylesheet" type="text/css" href="evo-calendar/css/evo-calendar.royal-navy.css"/>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="canonical" href="https://habeasdata.com.br/quem_somos">
-        <meta name="robots" content="nofollow, noimageindex">
-        <meta property="og:title" content="Utilitários" />
-	    <meta name="description" content="" />
+        <link rel="canonical" href="https://habeasdata.com.br/">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Habeas Data" />
+        <meta name="description" content="" />
 	    <meta property="og:description" content="" />
-        <meta property="og:url" content="https://habeasdata.com.br/utilitarios.html" />
+        <meta property="og:url" content="https://habeasdata.com.br/" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:image" content="https://habeasdata.com.br/img/icons/icone-logo.webp"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Habeas Data" />
         <!--Bootstrap Icons-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Habeas Data" />
         <style>
-            .sobre-especifico {
-                padding: 15px;
+            .login-form-2{
+                padding: 5%;
+                background: #0062cc;
+                box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+            }
+            .login-form-2 h3{
+                text-align: center;
+                color: #fff;
+            }
+            .login-container form{
+                padding: 10%;
+            }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                border: none;
+                cursor: pointer;
             }
 
-            header{
-                z-index: 3;
+            .login-form-2 .btnSubmit{
+                font-weight: 600;
+                color: #0062cc;
+                background-color: #fff;
+            }
+            .login-form-2 .ForgetPwd{
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            form.loginForm label{
+                display: block;
+                margin-top: 10px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 13px;
+                font-weight: 300;
+                padding-bottom: 5px;
             }
 
-            #closebtn{
-                z-index: 7;
+            form.loginForm input{
+                font-family: 'Roboto', sans-serif;
+                border-radius: 0px;
+                height: 40px;
+                border: 1px solid lightgrey;
+                width: 100%;
             }
         </style>
     </head>
@@ -55,7 +88,7 @@
                             <li><img src="img/icons/data.webp"><a href="utilitarios.html">Utilitários</a></li>
                             <li><img src="img/icons/contato.webp"><a href="contato.html">Contato e suporte</a></li>
                             <li class="botao-webmail"><a href="http://webmail.migadu.com/" target="_blank">Acessar Webmail</a></li>
-                            <li class="botao-webmail"><a href="login.html"><i class="bi bi-person"></i> Sou <b>cliente</b></a></li>
+                            <li class="botao-webmail"><a href="index.html"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
                         </ul>
                     </div>
 
@@ -69,54 +102,33 @@
                             <a href="utilitarios.html">Utilitários</a>
                             <a href="contato.html">Contato</a>
                             <a href="http://webmail.migadu.com/">Acessar Webmail</a>
-                            <a href="login.html">Sou cliente</a>
                         </div>
 
                         <div onclick="openNav()"><img src="img/icons/menu.webp"></div>
                     </div>
                 </nav>
             </header>
-
-            <div class="banner-outras-paginas" style="background: url('img/banner-2.webp') no-repeat center;">
-                <div class="bloco-banner-outras-paginas">
-                    <h1>Utilitários</h1>
-                </div>
-            </div>
-            
             <span id="closebtn" onclick="closeNav()"></span>
         </section>
-        <section class="faixa">
-            <div class="bloco-faixa">
-                <div class="dentro-faixa">
-                    <img src="img/icons/faixa-1.webp" style="width: 50px;">
-                    <p>Atendimento presencial e online.</p>
+
+        <main>
+            <section class="sobre-empresa" style="padding-top: 150px;">
+                <div class="bloco-sobre" style="width: 80%;">
+                    <div style="padding-left: 40px; padding-right: 40px;">
+                        <div style="display: block;">
+                            <p style="
+                                font-family: 'Roboto', sans-serif; 
+                                font-size: 30px; 
+                                color: #00477E; font-weight: 400;">Soluções da Habeas</p>
+                            <span>Você ainda não possui acesso a nenhuma de nossas soluções</span>
+                        </div>
+    
+
+                    </div>  
+    
                 </div>
-
-                <div class="dentro-faixa">
-                    <img src="img/icons/faixa-2.webp" style="width: 50px;">
-                    <p>Suporte de 2ª a 6ª feira, das 08:00 às 18:00 horas.</p>
-                </div>
-
-                <div class="dentro-faixa">
-                    <img src="img/icons/faixa-3.webp" style="width: 50px;">
-                    <p>Soluções totalmente integradas.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="calendarioUtilitario" class="sobre-especifico">
-            <div class="titulo-setor">
-                <h5>Calendário de Obrigações e Prestações de Contas</h5>  
-            </div>
-            <div id="calendar"></div>
-        </section>
-
-        <section class="informacao-faixa">
-            <div class="bloco-informacao">
-                <p>Para alcançar a eficiência em seus projetos, a empresa desenvolve um constante trabalho de estudo e pesquisa.</p>
-                <a href="empresa.html">Saiba mais</a>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <footer>
             <div class="bloco-rodape">    
@@ -145,8 +157,8 @@
         </footer>
 
         <script src="js/index.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	    <script src="evo-calendar/js/evo-calendar.js"></script>
-	    <script src="js/calendario.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     </body>
 </html>
