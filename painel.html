@@ -66,6 +66,121 @@
                 border: 1px solid lightgrey;
                 width: 100%;
             }
+
+            section.applications_area{
+            justify-content: center;
+        }
+        section.applications_area div{
+            margin-top: 10px;
+            display: flex; flex-direction: row;
+            gap: 5px; flex-wrap: wrap; flex: 1;
+        }
+
+        section.applications_area div a{
+            text-decoration: none;
+            padding: 0px;
+            margin: 0px;
+            display: inline!important;
+            width: auto;
+        }
+
+        div.windows_app_card{
+            padding: 10px;
+            width: 350px;
+            display: inline-flex!important;
+            margin-bottom: 5px;
+            flex-direction: column!important;
+            text-align: center;
+            background-image: linear-gradient(to left, #00aeff, #0086ff);
+            color: white;
+            cursor: pointer;
+        }
+        div.windows_app_card i{
+            font-size: 50px;
+        }
+        div.windows_app_card p{
+            padding-bottom: 0px!important;
+            margin: 0px;
+            font-weight: 600;
+        }
+
+        div.android_app_card{
+            padding: 10px;
+            width: 350px;
+            display: inline-flex!important;
+            margin-bottom: 5px;
+            flex-direction: column!important;
+            text-align: center;
+            background-image: linear-gradient(to left, #07e6b5, #037e4b);
+            color: white;
+            cursor: pointer;
+        }
+        div.android_app_card i{
+            font-size: 50px;
+        }
+        div.android_app_card p{
+            padding-bottom: 0px!important;
+            margin: 0px;
+            font-weight: 600;
+        }
+
+        div.browser_app_card{
+            padding: 10px;
+            width: 350px;
+            display: inline-flex!important;
+            margin-bottom: 5px;
+            flex-direction: column!important;
+            text-align: center;
+            background-image: linear-gradient(to left, #ffbb00, #f5a001);
+            color: white;
+            cursor: pointer;
+        }
+        div.browser_app_card i{
+            font-size: 50px;
+        }
+        div.browser_app_card p{
+            padding-bottom: 0px!important;
+            margin: 0px;
+            font-weight: 600;
+        }
+
+        div.offline_app_card{
+            padding: 10px;
+            width: 350px;
+            display: inline-flex!important;
+            margin-bottom: 5px;
+            flex-direction: column!important;
+            text-align: center;
+            background-image: linear-gradient(to right, #8400ff, #370064);
+            color: white;
+            cursor: pointer;
+        }
+        div.offline_app_card i{
+            font-size: 50px;
+        }
+        div.offline_app_card p{
+            padding-bottom: 0px!important;
+            margin: 0px;
+            font-weight: 600;
+        }
+
+        section.applications_area div h4{
+            font-family: 'Montserrat';
+        }
+
+        .bloco-sobre{
+            width: 80%;
+        }
+       
+@media (max-width: 650px) {
+        .faixa {
+            display: flex!important;
+        }
+
+        .bloco-sobre{
+            width: 100%;
+        }
+}
         </style>
     </head>
     <body>
@@ -85,10 +200,11 @@
                             <li><img src="img/icons/sobre.webp" style="width: 15px;"><a href="empresa.html">Sobre a empresa</a></li>
                             <li><img src="img/icons/equipe.webp"><a href="quem_somos.html">Quem somos</a></li>
                             <li><img src="img/icons/servicos.webp"><a href="servicos.html">Serviços</a></li>
+                            <li style="color:#00477E;"><i class="bi bi-lightbulb"></i><a href="painel.html">Soluções</a></li>
                             <li><img src="img/icons/data.webp"><a href="utilitarios.html">Utilitários</a></li>
                             <li><img src="img/icons/contato.webp"><a href="contato.html">Contato e suporte</a></li>
                             <li class="botao-webmail"><a href="http://webmail.migadu.com/" target="_blank">Acessar Webmail</a></li>
-                            <li class="botao-webmail"><a href="index.html"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
+                            <!-- <li class="botao-webmail"><a href="login.html"><i class="bi bi-person"></i> Sou <b>cliente</b></a></li> -->
                         </ul>
                     </div>
 
@@ -99,31 +215,257 @@
                             <a href="empresa.html">Sobre a empresa</a>
                             <a href="quem_somos.html">Quem somos</a>
                             <a href="servicos.html">Serviços</a>
+                            <a href="painel.html">Soluções</a>
                             <a href="utilitarios.html">Utilitários</a>
                             <a href="contato.html">Contato</a>
                             <a href="http://webmail.migadu.com/">Acessar Webmail</a>
+                            <!-- <a href="login.html">Sou cliente</a> -->
                         </div>
 
                         <div onclick="openNav()"><img src="img/icons/menu.webp"></div>
                     </div>
                 </nav>
             </header>
-            <span id="closebtn" onclick="closeNav()"></span>
+
+        <div class="banner-outras-paginas" style="background: url('img/banner-2.webp') no-repeat center;">
+        
+            <div class="bloco-banner-outras-paginas">
+                <h1>Nossa Soluções</h1>
+                <span style="color: white;">Conheça e acesse as melhores soluções que a habeas tem para você</span>
+            </div>
+        </div>
+
+        <span id="closebtn" onclick="closeNav()"></span>
+
+        <section class="faixa">
+            <div class="bloco-faixa" style="display: flex; justify-content: space-around; cursor: pointer;">
+                <span style="color: white;">Clique sobre um dos módulos abaixo para acessar suas respectivas aplicações</span>
+            </div>
         </section>
+        <section class="faixa">
+            <div class="bloco-faixa" style="display: flex; justify-content: space-around; cursor: pointer;">
+                <div class="dentro-faixa" id="faixaEducanet">
+                    <i style="color: white; font-size: 30px;" class="bi bi-book"></i>
+                    <p style="font-size: 25px;">EDUCA<b>NET</b></p>
+                </div>
+
+                <div class="dentro-faixa" id="faixaERP">
+                    <i style="color: white; font-size: 30px;" class="bi bi-bar-chart"></i>
+                    <p style="font-size: 25px;">ERP<b>HD</b></p>
+                </div>
+            </div>
+        </section>
+    </section>
 
         <main>
-            <section class="sobre-empresa" style="padding-top: 150px;">
-                <div class="bloco-sobre" style="width: 80%;">
+            <section class="sobre-empresa" id="erphdContent" style="display: none;">
+                <div class="bloco-sobre">
                     <div style="padding-left: 40px; padding-right: 40px;">
                         <div style="display: block;">
+                           <p style="
+                               font-family: 'Roboto', sans-serif; 
+                               font-size: 30px; 
+                               color: #00477E; font-weight: 400;">Soluções da Habeas</p>
+                               <h4 style="color: gray;">ERPHD</h4>
+                       </div>
+                       <section class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                
+                            </div>
+                        </div>
+                       </section>
+                    </div>
+                </div>
+            </section>
+            <section class="sobre-empresa" id="educanetContent" style="display: none;">
+                <div class="bloco-sobre">
+                    <div style="padding-left: 40px; padding-right: 40px;">
+                         <div style="display: block;">
                             <p style="
                                 font-family: 'Roboto', sans-serif; 
                                 font-size: 30px; 
                                 color: #00477E; font-weight: 400;">Soluções da Habeas</p>
-                            <span>Você ainda não possui acesso a nenhuma de nossas soluções</span>
-                        </div>
+                                <h4 style="color: gray;">EDUCANET</h4>
+                        </div><!--
+                        <div style="display: flex; background-color: #7c7c7c; color: white; flex-direction: row; padding: 20px; cursor: pointer; gap: 5px; justify-content: space-around;">
+                            <div>EDUCANET</div>|
+                            <div>ERPHD</div>
+                        </div> -->
     
-
+                        <section class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3 style="font-family: 'Montserrat'; font-weight: bolder; color: lightgray; padding-top: 20px;">Aplicações</h3>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <a href="http://portaleducanet.reta.com.br" target="_blank">
+                                                <div class="browser_app_card">
+                                                    <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
+                                                    <p>Portal Educanet</p>
+                                                </div>
+                                            </a>
+                                            <a href="https://apps.habeasdata.com.br/eDuProf" target="_blank">
+                                                <div class="browser_app_card">
+                                                    <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
+                                                    <p>Eduprof</p>
+                                                </div>
+                                            </a>
+                                            <a href="https://apps.habeasdata.com.br/eDucanet" target="_blank">
+                                                <div class="browser_app_card">
+                                                    <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
+                                                    <p>Educanet</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h3 style="font-family: 'Montserrat'; font-weight: bolder; color: grey; padding-top: 20px;">Executáveis / Instaláveis</h3>
+                                    <hr>
+                                    <small>
+                                        Para instalar ou acessar uma aplicação basta clicar sobre o cartão o qual contem o nome da mesma.<br>
+                                        Caso a instalação aconteça através de um <strong>dispositivo movel</strong>, certifique-se que a opção 
+                                        <strong>baixar aplicação através de fontes desconhecidas</strong> esteja habilitada.
+                                    </small><br>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <!-- <a href="https://hd.habeasdata.com.br/MagicRIAApplications4x/EDUCANET/WinDesktop/EDUCANET.application" target="_blank">
+                                            <div class="windows_app_card">
+                                                <i class="bi bi-windows" style="font-size: 13px;"></i>
+                                                <p>Educanet</p>
+                                            </div>
+                                        </a> -->
+                                        <a href="https://hd.habeasdata.com.br/MagicRIAApplications4x/EDUPROF_MOB/Android/EDUPROF_MOB.apk" target="_blank">
+                                            <div class="android_app_card">
+                                                <i class="bi bi-android2" style="font-size: 13px;"></i>
+                                                <p>Eduprof Online APK</p>
+                                            </div>
+                                        </a>
+                    
+                                        <a href="https://hd.habeasdata.com.br/MagicRIAApplications4x/EDUPROF_OFL/Android/EDUPROF OFFLINE.apk" target="_blank">
+                                            <div class="android_app_card">
+                                                <i class="bi bi-android2" style="font-size: 13px;"></i>
+                                                <p>Eduprof Offline APK</p>
+                                            </div>
+                                        </a>
+                                        
+                                        <a href="https://hd.habeasdata.com.br/MagicRIAApplications4x/EDUPROF/WinDesktop/EDUPROF.application" target="_blank">
+                                            <div class="windows_app_card">
+                                                <i class="bi bi-windows" style="font-size: 13px;"></i>
+                                                <p>Eduprof Online</p>
+                                            </div>
+                                        </a>
+                    
+                                        <a href="https://hd.habeasdata.com.br/MagicRIAApplications4x/EDUPROF_OFL/WinDesktop/EDUPROF OFFLINE.application" target="_blank">
+                                            <div class="windows_app_card">
+                                                <i class="bi bi-windows" style="font-size: 13px;"></i>
+                                                <p>Eduprof Offline</p>
+                                            </div>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row" style="padding-top: 20px;">
+                                        <h3>
+                                            Como instalar nossas aplicações<br> <b>RIA (Aplicações de interface rica)</b>
+                                        </h3>
+                                        <p>
+                                            <ol>
+                                                <li>
+                                                    Clique sobre um dos executáveis desejado acima;
+                                                </li>
+                                                <li>
+                                                    Caso apareça uma caixa de diálogo informando a instalação apenas confirme;
+                                                </li>
+                                                <li>
+                                                    Após a instalação do <b>executável</b> ser concluída, o mesmo aparecerá na barra inferior no canto 
+                                                    esquerdo do navegador.
+                                                </li>
+                                            </ol>
+                                            
+                                            <h4><b>Procedimento de instalação</b></h4>
+                                            
+                                            Após a instalação do executável ser concluida, clique sobre o mesmo, a seguinte tela
+                                            será exibida:
+                                        </p>
+                                        <img src="https://mgnl.habeasdata.com.br/images/passo1desktop.png" alt="passo1" class="w-50"><br><br>
+                                        <p>
+                                            Clique sobre o botão <b>Instalar</b> e aguarde a instalação
+                                            ser concluida:
+                                        </p>
+                                        <img src="https://mgnl.habeasdata.com.br/images/passo2desktop.png" alt="" class="w-50"><br><br>
+                                        <span style="text-transform: italic">Após a instalação ser concluída o programa será executado automaticamente.</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4" style="padding-top: 20px;">
+                                    <h3>
+                                        Como instalar apps de <b>fontes desconhecidas</b> no Android
+                                    </h3>
+                                    <p>
+                                        <ol>
+                                            <li>
+                                                Acesse as <b>Configurações</b>;
+                                            </li>
+                                            <li>
+                                                Aplicativos e notificações e procure <b>Avançado</b>;
+                                            </li>
+                                            <li>
+                                                Em <b>acesso especial de apps</b>, toque em <b>instalar apps desconhecidos</b>;
+                                            </li>
+                                        </ol>
+                                        É possível que, em alguns Androids, o caminho seja um pouco diferente.
+                                        <ol>
+                                            <li>
+                                                Acesse as Configurações;
+                                            </li>
+                                            <li>
+                                                Depois Configurações adicionais;
+                                            </li>
+                                            <li>
+                                                Em Instalar aplicativos de fontes externas, dê autorização ao Chrome ou ao navegador o qual utiliza;
+                                            </li>
+                                        </ol>
+                                        
+                                        <h4><b>Procedimento universal</b></h4>
+                                        
+                                        Durante o processo de instalação, siga as instruções na tela do Android.<br>
+                                        <ol>
+                                            <li>
+                                                Para acessar a configuração de Fontes desconhecidas, vá em <b>Configurações</b>;
+                                            </li>
+                                            <li>
+                                                Selecione <b>Segurança (Android OS 4.0+)</b>
+                                                ou <b>Aplicativos(Android OS 3.0 e versões anteriores)</b>;
+                                            </li>
+                                            <li>
+                                                Role até a parte inferior da tela para ver as configurações de <b>fontes desconhecidas</b>. 
+                                                Para <b>Android 8.0 +</b>, toque em <b>Configurações</b> e depois em <b>Aplicativos</b>;
+                                            </li>
+                                            <li>
+                                                Em seguida, selecione “Google Chrome” (ou outro app);
+                                            </li>
+                                            <li>
+                                                Toque em Install unknown apps <b>(Instalar aplicativos desconhecidos)</b>;
+                                            </li>
+                                            <li>
+                                                Depois, ative “Allow from this source” <b>(Permitir a partir desta fonte)</b>.
+                                            </li>
+                                        </ol>
+                                    </p>
+                                    <img src="https://files.tecnoblog.net/wp-content/uploads/2017/08/instalar-fontes-desconhecidas-android-oreo-700x408.png" alt="" class="w-100">
+                    
+                                    <h4 style="padding-top: 50px;"><b>Baixar tutoriais de instalação</b></h4>
+                                    <div style="display:flex; gap: 5px;">
+                                        <a class="btn btn-primary text-white" download href="https://mgnl.habeasdata.com.br/downloadables/Passo a passo EDUPROF  - 2022.docx" style="cursor: pointer; font-size: 13px; font-family: 'Roboto', sans-serif;">
+                                            <i class="bi bi-download"></i> <span>EDUPROF</span> 
+                                        </a><br>
+                                        <a class="btn btn-primary text-white" download href="https://mgnl.habeasdata.com.br/downloadables/Passo a passo EDUPROF_OFL  - 2022.docx" style="cursor: pointer; font-size: 13px; font-family: 'Roboto', sans-serif;">
+                                            <i class="bi bi-download"></i> <span>EDUPROF OFFLINE</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>  
     
                 </div>
@@ -158,7 +500,20 @@
 
         <script src="js/index.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-    </script>
+        async defer></script>
+        <script>
+            function showEducanetContent(){
+                document.getElementById('educanetContent').style.display = "flex";
+                document.getElementById('erphdContent').style.display = "none";
+                location.href = "#educanetContent";
+            }
+            function showErpContent(){
+                document.getElementById('erphdContent').style.display = "flex";
+                document.getElementById('educanetContent').style.display = "none";
+                location.href = "#erphdContent";
+            }
+            document.getElementById('faixaEducanet').onclick = showEducanetContent;
+            document.getElementById('faixaERP').onclick = showErpContent;
+        </script>
     </body>
 </html>
