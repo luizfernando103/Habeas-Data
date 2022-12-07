@@ -18,6 +18,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Habeas Data" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <style>
             .login-form-2{
                 padding: 5%;
@@ -195,16 +199,17 @@
                     </div>
 
                     <div id="menu-desktop">
-                        <ul>
+                        <ul id="menuDesktop">
                             <li><img src="img/icons/home.webp"><a href="index.html">Página inicial</a></li>
                             <li><img src="img/icons/sobre.webp" style="width: 15px;"><a href="empresa.html">Sobre a empresa</a></li>
                             <li><img src="img/icons/equipe.webp"><a href="quem_somos.html">Quem somos</a></li>
                             <li><img src="img/icons/servicos.webp"><a href="servicos.html">Serviços</a></li>
-                            <li style="color:#00477E;"><i class="bi bi-lightbulb"></i><a href="painel.html">Soluções</a></li>
+                            <!-- <li style="color:#00477E;"><i class="bi bi-lightbulb"></i><a href="painel.html">Soluções</a></li> -->
                             <li><img src="img/icons/data.webp"><a href="utilitarios.html">Utilitários</a></li>
+                            <li><a href="painel.html" title="Acesso apenas para clientes"><i class="bi bi-hand-index-fill" style="color: #00477E;"></i> Soluções, Cursos e Treinamentos</a></li>
                             <li><img src="img/icons/contato.webp"><a href="contato.html">Contato e suporte</a></li>
                             <li class="botao-webmail"><a href="http://webmail.migadu.com/" target="_blank">Acessar Webmail</a></li>
-                            <!-- <li class="botao-webmail"><a href="login.html"><i class="bi bi-person"></i> Sou <b>cliente</b></a></li> -->
+                            <li class="botao-webmail"><a onclick="sair()" href="#"><i class="bi bi-person"></i> Sair</a></li> 
                         </ul>
                     </div>
 
@@ -215,11 +220,12 @@
                             <a href="empresa.html">Sobre a empresa</a>
                             <a href="quem_somos.html">Quem somos</a>
                             <a href="servicos.html">Serviços</a>
-                            <a href="painel.html">Soluções</a>
+                            <!-- <a href="painel.html">Soluções</a> -->
                             <a href="utilitarios.html">Utilitários</a>
+                            <a href="painel.html" title="Acesso apenas para clientes">Soluções, Cursos e Treinamentos</a>
                             <a href="contato.html">Contato</a>
                             <a href="http://webmail.migadu.com/">Acessar Webmail</a>
-                            <!-- <a href="login.html">Sou cliente</a> -->
+                            <a onclick="sair()" href="#">Sair</a> 
                         </div>
 
                         <div onclick="openNav()"><img src="img/icons/menu.webp"></div>
@@ -230,7 +236,7 @@
         <div class="banner-outras-paginas" style="background: url('img/banner-2.webp') no-repeat center;">
         
             <div class="bloco-banner-outras-paginas">
-                <h1>Nossa Soluções</h1>
+                <h1>Soluções, Cursos e Treinamentos</h1>
                 <span style="color: white;">Conheça e acesse as melhores soluções que a habeas tem para você</span>
             </div>
         </div>
@@ -299,10 +305,22 @@
                                                     <p style="font-weight: 300;">PORTAL DA <strong style="font-weight: 800;">TRANSPARÊNCIA</strong></p>
                                                 </div>
                                             </a>
-                                            <a href="https://portaldocidadao.habeasdata.com.br/?cod_empre=33" target="_blank">
+                                            <a href="https://portaldocidadao.habeasdata.com.br/" target="_blank">
                                                 <div class="browser_app_card">
                                                     <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
-                                                    <p style="font-weight: 300;">ATENDIMENTO AO <strong style="font-weight: 800;">CIDADÃO</strong></p>
+                                                    <p style="font-weight: 300;">e-CIDA<strong style="font-weight: 800;">HD</strong>ÃO</p>
+                                                </div>
+                                            </a>
+                                            <a href="https://ged.habeasdata.com.br/share/page" target="_blank">
+                                                <div class="browser_app_card">
+                                                    <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
+                                                    <p style="font-weight: 400;"><strong style="font-weight: 800;">P</strong>H<strong style="font-weight: 800;">D</strong> PROCESSO DIGITAL</p>
+                                                </div>
+                                            </a>
+                                            <a href="https://enotas2.nfe-hd.com.br/sep/bemvindo" target="_blank">
+                                                <div class="browser_app_card">
+                                                    <i class="bi bi-browser-chrome" style="font-size: 13px;"></i>
+                                                    <p style="font-weight: 300;">ACESSO <strong style="font-weight: 800;"> NF-e HD</strong></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -537,6 +555,15 @@
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer></script>
         <script>
+            window.onload = function(){
+                if(localStorage.logged_user == null){
+                    location.href = "login.html";
+                }
+            }
+
+            function sendToGED(){
+                location.href = "https://207.244.230.231/share/";
+            }
             function showEducanetContent(){
                 document.getElementById('educanetContent').style.display = "flex";
                 document.getElementById('erphdContent').style.display = "none";
@@ -549,6 +576,11 @@
             }
             document.getElementById('faixaEducanet').onclick = showEducanetContent;
             document.getElementById('faixaERP').onclick = showErpContent;
+
+            function sair(){
+                delete localStorage.logged_user;
+                location.href="login.html";
+            }
         </script>
     </body>
 </html>

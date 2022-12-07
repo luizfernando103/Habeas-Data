@@ -86,6 +86,7 @@
                             <li><img src="img/icons/equipe.webp"><a href="quem_somos.html">Quem somos</a></li>
                             <li><img src="img/icons/servicos.webp"><a href="servicos.html">Serviços</a></li>
                             <li><img src="img/icons/data.webp"><a href="utilitarios.html">Utilitários</a></li>
+                            <li><a href="painel.html" title="Acesso apenas para clientes"><i class="bi bi-hand-index-fill" style="color: #00477E;"></i> Soluções, Cursos e Treinamentos</a></li>
                             <li><img src="img/icons/contato.webp"><a href="contato.html">Contato e suporte</a></li>
                             <li class="botao-webmail"><a href="http://webmail.migadu.com/" target="_blank">Acessar Webmail</a></li>
                             <li class="botao-webmail"><a href="login.html"><i class="bi bi-person"></i> Sou <b>cliente</b></a></li>
@@ -100,6 +101,7 @@
                             <a href="quem_somos.html">Quem somos</a>
                             <a href="servicos.html">Serviços</a>
                             <a href="utilitarios.html">Utilitários</a>
+                            <a href="painel.html" title="Acesso apenas para clientes">Soluções, Cursos e Treinamentos</a>
                             <a href="contato.html">Contato</a>
                             <a href="http://webmail.migadu.com/">Acessar Webmail</a>
                         </div>
@@ -123,16 +125,17 @@
                             <small>Acesso exclusivo para clientes</small>
                             <form action="" class="loginForm">
                                 <label for="">LOGIN</label>
-                                <input type="text">
+                                <input type="text" id="login">
                                 <label for="">SENHA</label>
-                                <input type="text">
-                                <div class="g-recaptcha" data-sitekey="6LdS8rEhAAAAAFAmM0aMQXa8AYCjZVuRJsBb7teH"></div>
+                                <input type="password" id="pwd">
+                                <div id="mensagem" style="display: none; font-size: 13px; background-color:#00477E; color: white; padding: 5px; margin-top: 5px;">
+                                    Usuário e senha inválidos.</div>
                             </form>
                         </div>
     
                         <div class="botoes-sobre">
                             <div class="primeiro-botao">
-                                <a href="painel.html">LOGAR</a>
+                                <button style="font-size: 13px; border: none; background-color:#00477E; color: white; padding: 10px; cursor: pointer;" onclick="checkFixedLogin(this)">LOGAR</button>
                             </div> 
                         </div>
                     </div>  
@@ -170,6 +173,28 @@
         <script src="js/index.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
+    </script>
+    <script>
+        window.onload = function(){
+                if(localStorage.logged_user != null){
+                    location.href = "painel.html";
+                }
+        }
+
+        function checkFixedLogin(e){
+            let login = document.getElementById('login').value;
+            let senha = document.getElementById('pwd').value;
+
+            if(login=='habeasdata' && senha=='cliente'){
+                localStorage.logged_user = true;
+                document.getElementById('mensagem').style.display = 'none';
+                setTimeout(()=>{
+                    location.href="painel.html";
+                },500)
+            } else {
+                document.getElementById('mensagem').style.display = 'block';
+            } 
+        }
     </script>
     </body>
 </html>
